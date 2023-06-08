@@ -63,7 +63,7 @@ public class ProductDetail extends PrimaryEntity {
 
     @ManyToOne
     @JoinColumn(name = "color_id")
-    private SoleHeight colorId;
+    private Color colorId;
 
     @ManyToOne
     @JoinColumn(name = "size_id")

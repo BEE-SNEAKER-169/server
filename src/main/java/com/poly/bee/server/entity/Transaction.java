@@ -34,7 +34,7 @@ public class Transaction extends PrimaryEntity {
     private String note;
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "bill_id")
     private Order order;
 
     @Column(name = "type")

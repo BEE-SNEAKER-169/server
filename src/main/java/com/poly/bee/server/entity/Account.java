@@ -45,7 +45,7 @@ public class Account extends PrimaryEntity {
     private String avatar;
 
     @ManyToOne
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
     private Role role;
 
 }

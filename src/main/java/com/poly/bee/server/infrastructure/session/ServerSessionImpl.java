@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-class ArticleProjectSessionImpl implements ArticleProjectSession {
+class ServerSessionImpl implements ServerSession {
 
     @Autowired
     private HttpSession session;

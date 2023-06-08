@@ -12,6 +12,7 @@ public class AuditEntityListener {
     @Value("${app.UserId}")
     private String id;
 
+
     @PrePersist
     private void onCreate(AuditEntity entity) {
         entity.setCreatedAt(getCurrentTime());

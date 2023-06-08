@@ -1,5 +1,5 @@
 package com.poly.bee.server.infrastructure.session;
 
-public interface ArticleProjectSession {
+public interface ServerSession {
     String getUserId();
 }

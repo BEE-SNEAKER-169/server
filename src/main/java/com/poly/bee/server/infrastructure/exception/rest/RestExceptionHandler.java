@@ -25,7 +25,7 @@ public final class RestExceptionHandler extends
     public Map<String, String> handleExption(MethodArgumentNotValidException exception) {
         Map<String, String> errorMap = new HashMap<>();
         exception.getBindingResult().getFieldErrors().forEach(error -> {
-            errorMap.put(error.getField(), error.getDefaultMessage());
+            errorMap.put(error.getField() + "Error", error.getDefaultMessage());
         });
 
         return errorMap;

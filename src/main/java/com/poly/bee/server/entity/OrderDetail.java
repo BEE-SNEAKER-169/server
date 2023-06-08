@@ -24,7 +24,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 @ToString
-@Table(name = "order_detail")
+@Table(name = "bill_detail")
 public class OrderDetail extends PrimaryEntity {
 
     @Column(name = "quantity")
@@ -41,7 +41,7 @@ public class OrderDetail extends PrimaryEntity {
     private ProductDetail productDetail;
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "bill_id")
     private Order order;
 
     @Column(name = "status")

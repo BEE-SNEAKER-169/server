@@ -23,7 +23,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 @ToString
-@Table(name = "order")
+@Table(name = "bill")
 public class Order extends PrimaryEntity {
 
     @Column(name = "code")
@@ -73,6 +73,14 @@ public class Order extends PrimaryEntity {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
+    private Account customer;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Account employee;
+
+    @ManyToOne
+    @JoinColumn(name = "customer_information_id")
     private CustomerInformation customerInformation;
 
 }

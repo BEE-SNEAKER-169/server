@@ -31,7 +31,7 @@ public class OrderHistory extends PrimaryEntity {
     private String actionDescription;
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "bill_id")
     private Order order;
 
     @Column(name = "status")
