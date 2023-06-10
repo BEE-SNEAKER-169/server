@@ -2,10 +2,9 @@ package com.poly.bee.server.entity;
 
 import com.poly.bee.server.entity.base.PrimaryEntity;
 import com.poly.bee.server.infrastructure.constant.PromotionStatus;
+import com.poly.bee.server.infrastructure.constant.PromotionType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -33,6 +32,9 @@ public class Promotion extends PrimaryEntity {
 
     @Column(name = "status")
     private PromotionStatus status;
+
+    @Column(name = "type")
+    private PromotionType type;
 
     @Column(name = "start_time")
     private Long startTime;

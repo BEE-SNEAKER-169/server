@@ -14,20 +14,19 @@ import lombok.Setter;
 @EntityListeners(AuditEntityListener.class)
 public abstract class AuditEntity {
 
-    @Column(updatable = false)
+    @Column(name="created_at", updatable = false)
     private Long createdAt;
 
-    @Column
+    @Column(name="updated_at")
     private Long updatedAt;
 
-    @Column(length = EntityProperties.LENGTH_ID)
+    @Column(name="created_by", length = EntityProperties.LENGTH_ID)
     private String createdBy;
 
-    @Column(length = EntityProperties.LENGTH_ID)
+    @Column(name="updated_by", length = EntityProperties.LENGTH_ID)
     private String updatedBy;
 
-    @Column
+    @Column(name="deleted")
     private Integer deleted;
-
 
 }

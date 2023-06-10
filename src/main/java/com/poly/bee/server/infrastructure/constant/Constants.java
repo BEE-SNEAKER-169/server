@@ -1,7 +1,5 @@
 package com.poly.bee.server.infrastructure.constant;
 
-import com.poly.bee.serverTool.DBGenerator;
-
 public final class Constants {
 
     private Constants() {

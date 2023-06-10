@@ -23,6 +23,7 @@ import com.poly.bee.server.infrastructure.constant.OrderDetailStatus;
 import com.poly.bee.server.infrastructure.constant.OrderStatus;
 import com.poly.bee.server.infrastructure.constant.ProductStatus;
 import com.poly.bee.server.infrastructure.constant.PromotionStatus;
+import com.poly.bee.server.infrastructure.constant.PromotionType;
 import com.poly.bee.server.infrastructure.constant.TransactionType;
 import com.poly.bee.server.repository.AccountRepository;
 import com.poly.bee.server.repository.BrandRepository;
@@ -543,7 +544,8 @@ public class DBGenerator implements CommandLineRunner {
         promotion.setEndTime(convertLong("01/07/2023"));
         promotion.setDescription("Tưng bừng chào đón một mùa hè náo nhiệt");
         promotion.setValue(0.2);
-        promotion.setStatus(PromotionStatus.THEO_PHAN_TRAM);
+        promotion.setStatus(PromotionStatus.HOAT_DONG);
+        promotion.setType(PromotionType.THEO_TIEN_MAT);
         promotion.setId(promotionRepository.save(promotion).getId());
 
         Promotion promotion1 = new Promotion();
@@ -552,7 +554,8 @@ public class DBGenerator implements CommandLineRunner {
         promotion1.setStartTime(convertLong("05/05/2003"));
         promotion1.setEndTime(convertLong("10/05/2023"));
         promotion1.setDescription("Tưng bừng khai chương cửa hàng");
-        promotion1.setStatus(PromotionStatus.THEO_PHAN_TRAM);
+        promotion1.setStatus(PromotionStatus.NGUNG_HOAT_DONG);
+        promotion1.setType(PromotionType.THEO_TIEN_MAT);
         promotion1.setValue(0.5);
         promotion1.setId(promotionRepository.save(promotion1).getId());
 

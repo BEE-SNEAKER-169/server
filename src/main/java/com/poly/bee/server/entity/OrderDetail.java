@@ -2,7 +2,6 @@ package com.poly.bee.server.entity;
 
 import com.poly.bee.server.entity.base.PrimaryEntity;
 import com.poly.bee.server.infrastructure.constant.OrderDetailStatus;
-import com.poly.bee.server.infrastructure.constant.ProductStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;

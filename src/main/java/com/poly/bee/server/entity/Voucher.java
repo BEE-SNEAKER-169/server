@@ -1,7 +1,6 @@
 package com.poly.bee.server.entity;
 
 import com.poly.bee.server.entity.base.PrimaryEntity;
-import com.poly.bee.server.infrastructure.constant.PromotionStatus;
 import com.poly.bee.server.infrastructure.constant.VoucherStatus;
 import com.poly.bee.server.infrastructure.constant.VoucherType;
 import jakarta.persistence.Column;
