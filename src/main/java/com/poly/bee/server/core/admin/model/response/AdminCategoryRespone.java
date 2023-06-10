@@ -8,6 +8,8 @@ import org.springframework.data.rest.core.config.Projection;
 @Projection(types = {Category.class})
 public interface AdminCategoryRespone extends IsIdentified {
 
+    Integer getStt();
+
     @Value("#{target.id}")
     String getId();
 

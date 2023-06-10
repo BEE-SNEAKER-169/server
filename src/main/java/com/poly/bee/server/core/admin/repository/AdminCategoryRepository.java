@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface AdminCategoryRepository extends CategoryRepository {
 
     @Query(value = """
-            SELECT ca.id, ca.code, ca.name
+            SELECT ROW_NUMBER() OVER(ORDER BY ca.created_at DESC) AS stt, ca.id, ca.code, ca.name
             FROM category ca
             """, countQuery = """
 
