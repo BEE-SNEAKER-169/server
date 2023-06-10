@@ -13,6 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Nationalized;
 
 @Entity
 @Getter
@@ -42,7 +43,8 @@ public class Promotion extends PrimaryEntity {
     @Column(name = "value")
     private Double value;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "longtext")
+    @Nationalized
     private String description;
 
 }

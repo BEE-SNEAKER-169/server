@@ -27,7 +27,7 @@ import java.math.BigDecimal;
 public class ProductDetail extends PrimaryEntity {
 
     @Column(name = "sku")
-    private Integer sku;
+    private String sku;
 
     @Column(name = "quantity")
     private Integer quantity;
@@ -63,7 +63,7 @@ public class ProductDetail extends PrimaryEntity {
 
     @ManyToOne
     @JoinColumn(name = "color_id")
-    private Color colorId;
+    private Color color;
 
     @ManyToOne
     @JoinColumn(name = "size_id")
