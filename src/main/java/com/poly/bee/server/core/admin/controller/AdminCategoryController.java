@@ -1,6 +1,7 @@
 package com.poly.bee.server.core.admin.controller;
 
 
+import com.poly.bee.server.core.admin.model.request.AdminCategoryRequest;
 import com.poly.bee.server.core.admin.model.request.AdminCreateCategoryRequest;
 import com.poly.bee.server.core.admin.model.request.AdminUpdateCategoryRequest;
 import com.poly.bee.server.core.admin.service.AdminCategoryService;
@@ -27,7 +28,7 @@ public class AdminCategoryController extends BaseController {
     private AdminCategoryService adminCategoryService;
 
     @GetMapping("")
-    public ResponseObject getAllCategoryByCensor(final AdminCreateCategoryRequest request) {
+    public ResponseObject getAllCategoryByCensor(final AdminCategoryRequest request) {
         return new ResponseObject(adminCategoryService.getAllCategory(request));
     }
 

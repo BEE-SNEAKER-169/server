@@ -1,6 +1,7 @@
 package com.poly.bee.server.core.admin.service.impl;
 
 
+import com.poly.bee.server.core.admin.model.request.AdminCategoryRequest;
 import com.poly.bee.server.core.admin.model.request.AdminCreateCategoryRequest;
 import com.poly.bee.server.core.admin.model.request.AdminUpdateCategoryRequest;
 import com.poly.bee.server.core.admin.model.response.AdminCategoryRespone;
@@ -24,9 +25,9 @@ public class AdminCategoryServiceImpl implements AdminCategoryService {
     private AdminCategoryRepository adminCategoryRepository;
 
     @Override
-    public PageableObject<AdminCategoryRespone> getAllCategory(final AdminCreateCategoryRequest request) {
+    public PageableObject<AdminCategoryRespone> getAllCategory(final AdminCategoryRequest request) {
         Pageable pageable = PageRequest.of(request.getPage(), request.getSize());
-        Page<AdminCategoryRespone> res = adminCategoryRepository.getAllCategory(pageable);
+        Page<AdminCategoryRespone> res = adminCategoryRepository.getAllCategory(pageable, request);
         return new PageableObject<>(res);
     }
 
