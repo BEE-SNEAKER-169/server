@@ -28,7 +28,7 @@ public class AdminCategoryController extends BaseController {
     private AdminCategoryService adminCategoryService;
 
     @GetMapping("")
-    public ResponseObject getAllCategoryByCensor(final AdminCategoryRequest request) {
+    public ResponseObject getAllCategory(final AdminCategoryRequest request) {
         return new ResponseObject(adminCategoryService.getAllCategory(request));
     }
 
