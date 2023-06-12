@@ -1,15 +1,13 @@
 package com.poly.bee.server.core.admin.controller;
 
 
-import com.poly.bee.server.core.admin.model.request.AdminCreateCardRequest;
 import com.poly.bee.server.core.admin.service.AdminCardService;
 import com.poly.bee.server.core.common.base.BaseController;
 import com.poly.bee.server.core.common.base.ResponseObject;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,12 +16,15 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = {"*"}, maxAge = 4800, allowCredentials = "false")
 public class AdminCardController extends BaseController {
 
+    @Value("${app.UserId}")
+    private String id;
+
     @Autowired
     private AdminCardService adminCardService;
 
     @PostMapping("")
-    public ResponseObject addCard(@Valid @RequestBody AdminCreateCardRequest request) {
-        return new ResponseObject(adminCardService.addCard(request));
+    public ResponseObject addCard() {
+        return new ResponseObject(adminCardService.addCard(id));
     }
 
 }
