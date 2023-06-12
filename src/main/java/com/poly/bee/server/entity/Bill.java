@@ -24,7 +24,7 @@ import java.math.BigDecimal;
 @Builder
 @ToString
 @Table(name = "bill")
-public class Order extends PrimaryEntity {
+public class Bill extends PrimaryEntity {
 
     @Column(name = "code")
     private String code;

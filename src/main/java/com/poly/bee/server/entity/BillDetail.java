@@ -1,7 +1,7 @@
 package com.poly.bee.server.entity;
 
 import com.poly.bee.server.entity.base.PrimaryEntity;
-import com.poly.bee.server.infrastructure.constant.OrderStatus;
+import com.poly.bee.server.infrastructure.constant.OrderDetailStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -14,6 +14,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.math.BigDecimal;
+
 @Entity
 @Getter
 @Setter
@@ -21,17 +23,27 @@ import lombok.ToString;
 @NoArgsConstructor
 @Builder
 @ToString
-@Table(name = "order_history")
-public class OrderHistory extends PrimaryEntity {
+@Table(name = "bill_detail")
+public class BillDetail extends PrimaryEntity {
 
-    @Column(name = "action_description")
-    private String actionDescription;
+    @Column(name = "quantity")
+    private Integer quantity;
+
+    @Column(name = "price")
+    private BigDecimal price;
+
+    @Column(name = "promotion_price")
+    private BigDecimal promotionPrice;
+
+    @ManyToOne
+    @JoinColumn(name = "detail_product_id")
+    private ProductDetail productDetail;
 
     @ManyToOne
     @JoinColumn(name = "bill_id")
-    private Order order;
+    private Bill bill;
 
     @Column(name = "status")
-    private OrderStatus status;
+    private OrderDetailStatus status;
 
 }
