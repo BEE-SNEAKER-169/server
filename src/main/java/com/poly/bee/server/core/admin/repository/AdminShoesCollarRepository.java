@@ -16,7 +16,7 @@ public interface AdminShoesCollarRepository extends ShoesCollarRepository {
             FROM shoes_collar ca
             WHERE (:#{#request.search} IS NULL 
                     OR :#{#request.search} LIKE ''
-                    OR ca.code LIKE :#{#request.search} 
+                    OR ca.code LIKE %:#{#request.search}% 
             ) OR (
                     :#{#request.search} IS NULL 
                     OR :#{#request.search} LIKE ''

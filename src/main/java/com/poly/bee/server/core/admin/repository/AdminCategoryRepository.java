@@ -16,11 +16,11 @@ public interface AdminCategoryRepository extends CategoryRepository {
             FROM category ca
             WHERE (:#{#request.search} IS NULL 
                     OR :#{#request.search} LIKE ''
-                    OR ca.code LIKE :#{#request.search} 
+                    OR ca.code LIKE %:#{#request.search}% 
             ) OR (
                     :#{#request.search} IS NULL 
                     OR :#{#request.search} LIKE ''
-                    OR ca.name LIKE :#{#request.search} 
+                    OR ca.name LIKE %:#{#request.search}% 
             )
             """, countQuery = """
 
